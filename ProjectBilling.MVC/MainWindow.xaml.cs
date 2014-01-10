@@ -19,9 +19,26 @@ namespace ProjectBilling.MVC
     /// </summary>
     public partial class MainWindow : Window
     {
+        ProjectsController controller;
         public MainWindow()
         {
             InitializeComponent();
+              controller = new ProjectsController(new ProjectsModel());
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+
+           
+
+            controller.ShowProjectsView(this);
+        }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+            GC.Collect();
         }
     }
 }

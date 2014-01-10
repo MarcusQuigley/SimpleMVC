@@ -35,6 +35,8 @@ namespace ProjectBilling.MVC
                 selectedProject.Actual = project.Actual;
                 selectedProject.Estimate = project.Estimate;
             }
+
+            OnProjectUpdated(selectedProject);
         }
 
         public event EventHandler<ProjectEventArgs> ProjectUpdated;

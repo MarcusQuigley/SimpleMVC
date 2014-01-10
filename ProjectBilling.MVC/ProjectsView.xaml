@@ -1,0 +1,36 @@
+﻿<Window x:Class="ProjectBilling.MVC.ProjectsView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ProjectsView" Height="250" Width="250" Padding="5">
+    <Window.Resources>
+        <Style TargetType="{x:Type Label}">
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".5*"/>
+            <ColumnDefinition Width=".5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        
+        <Label Content="Project:"/>
+        <ComboBox Grid.Column="1" x:Name="cboProjects" Margin="5" SelectionChanged="cboProjects_SelectionChanged" />
+
+        <Label Content="Estimated Cost:" Grid.Row="1"/>
+        <TextBox Grid.Column="1" Grid.Row="1" x:Name="txtEstimate"/>
+
+        <Label Content="Actual Cost:" Grid.Row="2"/>
+        <TextBox Grid.Column="1" Grid.Row="2" x:Name="txtActual"/>
+
+        <Button Content="Update" Grid.Row="3" Margin="5" x:Name="btnUpdate" Click="btnUpdate_Click" />
+    </Grid>
+</Window>
