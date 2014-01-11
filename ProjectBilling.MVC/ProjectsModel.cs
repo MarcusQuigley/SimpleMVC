@@ -52,8 +52,7 @@ namespace ProjectBilling.MVC
 
     public class ProjectEventArgs : EventArgs
     {
- 
-        public Project Project { get; set; }
+         public Project Project { get; set; }
 
         public ProjectEventArgs(Project project)
         {
